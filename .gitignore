@@ -1,0 +1,7 @@
+*.pyc
+*.bak
+.idea
+_git
+*.pyo
+*egg*
+_project
