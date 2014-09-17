@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cmdb',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,10 +59,22 @@ WSGI_APPLICATION = 'wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+       'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cmdb',
+        'USER': 'cmdb',
+        'PASSWORD': 'cmdb',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
+
+#DATABASES = {
+#    'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
