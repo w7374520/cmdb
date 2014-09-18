@@ -19,7 +19,7 @@ To get setup with CMDB code you must have the follow installed:
 Create a virtual environment where dependencies will live:
 
 ```
-$ virtualenv --no-site-packages openparty
+$ virtualenv --no-site-packages cmdb
 $ source cmdb/bin/activate
 (cmdb)$
 ```
@@ -63,14 +63,14 @@ sudo easy_install -U pip
 sudo pip install virtualenv
 sudo mkdir /usr/local/virtualenv
 cd /usr/local/virtualenv
-sudo virtualenv --distribute --no-site-packages openparty
-source /usr/local/virtualenv/openparty/bin/activate
+sudo virtualenv --distribute --no-site-packages cmdb
+source /usr/local/virtualenv/cmdb/bin/activate
 cd PROJECT_FOLDER
 
 ```
 
 ```
 sudo su -
-source /usr/local/virtualenv/openparty/bin/activate
+source /usr/local/virtualenv/cmdb/bin/activate
 pip install -r requirements.txt
 ```
