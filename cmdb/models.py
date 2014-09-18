@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 
-# Create your models here.
 
 class Servers(models.Model):
-    id = models.IntegerField(primary_key=True,max_length=128)
-    servernum = models.CharField(max_length=255,unique=True)
+    id = models.IntegerField(primary_key=True, max_length=128)
+    servernum = models.CharField(max_length=255, unique=True)
     product = models.CharField(max_length=128)
     sid = models.CharField(max_length=128)
     cpu = models.CharField(max_length=128)
@@ -20,12 +21,14 @@ class Servers(models.Model):
     status = models.CharField(max_length=32)
     description = models.TextField(max_length=255)
     other = models.CharField(max_length=255)
+
     def __unicode__(self):
         return u"%s " % self.id
 
+
 class Routers(models.Model):
-    id = models.CharField(primary_key=True,max_length=128)
-    routernum = models.CharField(max_length=255,unique=True)
+    id = models.CharField(primary_key=True, max_length=128)
+    routernum = models.CharField(max_length=255, unique=True)
     product = models.CharField(max_length=255)
     sid = models.CharField(max_length=128)
     ipaddress = models.CharField(max_length=128)
@@ -34,11 +37,12 @@ class Routers(models.Model):
     principal = models.CharField(max_length=255)
     status = models.CharField(max_length=32)
     description = models.TextField(max_length=255)
-    other = models.CharField(max_length=255)    
+    other = models.CharField(max_length=255)
+
 
 class Switch(models.Model):
-    id = models.IntegerField(primary_key=True,max_length=128)
-    switchnum = models.CharField(max_length=255,unique=True)
+    id = models.IntegerField(primary_key=True, max_length=128)
+    switchnum = models.CharField(max_length=255, unique=True)
     product = models.CharField(max_length=255)
     sid = models.CharField(max_length=128)
     ipaddress = models.CharField(max_length=128)
@@ -47,11 +51,12 @@ class Switch(models.Model):
     principal = models.CharField(max_length=255)
     status = models.CharField(max_length=32)
     description = models.TextField(max_length=255)
-    other = models.CharField(max_length=255)       
+    other = models.CharField(max_length=255)
+
 
 class Storage(models.Model):
-    id = models.IntegerField(primary_key=True,max_length=128)
-    storagenum = models.CharField(max_length=255,unique=True)
+    id = models.IntegerField(primary_key=True, max_length=128)
+    storagenum = models.CharField(max_length=255, unique=True)
     product = models.CharField(max_length=255)
     sid = models.CharField(max_length=128)
     ipaddress = models.CharField(max_length=128)
@@ -60,11 +65,12 @@ class Storage(models.Model):
     principal = models.CharField(max_length=255)
     status = models.CharField(max_length=32)
     description = models.TextField(max_length=255)
-    other = models.CharField(max_length=255) 
-    
+    other = models.CharField(max_length=255)
+
+
 class Firewall(models.Model):
-    id = models.IntegerField(primary_key=True,max_length=128)
-    fwnum = models.CharField(max_length=255,unique=True)
+    id = models.IntegerField(primary_key=True, max_length=128)
+    fwnum = models.CharField(max_length=255, unique=True)
     product = models.CharField(max_length=255)
     sid = models.CharField(max_length=128)
     ipaddress = models.CharField(max_length=128)
@@ -73,20 +79,4 @@ class Firewall(models.Model):
     principal = models.CharField(max_length=255)
     status = models.CharField(max_length=32)
     description = models.TextField(max_length=255)
-    other = models.CharField(max_length=255)     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    other = models.CharField(max_length=255)
