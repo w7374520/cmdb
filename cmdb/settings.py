@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'device_manage',
+    'idcroom_manage',
 )
 
 MIDDLEWARE_CLASSES = (
