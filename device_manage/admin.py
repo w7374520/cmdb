@@ -5,7 +5,6 @@ from models import Servers,Routers,Switch,Storage,Firewall
 
 
 class ServersAdmin(admin.ModelAdmin):
-
     list_display = ("id", "servernum", "product", "ipaddress", "apptype", "status") 
 
 class RoutersAdmin(admin.ModelAdmin):
