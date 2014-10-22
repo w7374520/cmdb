@@ -2,12 +2,19 @@
 from django.db import models
 
 
+PRODUCTS = {1:'戴尔服务器', 2:'超威服务器', 3:'台式机', 4:'其他'}
+SMODELS = {1:'DELL R610', 2:"DELL R710", 3:"DELL R720", 4:"超威标配"}
+
+PRODUCT = [(PS,PS) for PS in PRODUCTS.values()]
+SMODEL = [(PM,PM) for PM in SMODELS.values()]
+
 class Servers(models.Model):
-    id = models.IntegerField(primary_key=True, max_length=128)
+    #id = models.IntegerField(primary_key=True, max_length=128, )
     servernum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
-    product = models.CharField(max_length=128, verbose_name="品牌")
-    sid = models.CharField(max_length=128, verbose_name="序列号")
-    cpu = models.CharField(max_length=128, verbose_name="CPU")
+    product = models.CharField(max_length=128, verbose_name="品牌", choices=PRODUCT)
+    smodel = models.CharField(max_length=128, verbose_name="型号", choices=SMODEL)
+    sid = models.CharField(max_length=256, verbose_name="序列号")
+    cpu = models.CharField(max_length=128, verbose_name="CPU", default="Intel Xeon E5620 @2.40GHz" )
     memory = models.CharField(max_length=128, verbose_name="内存")
     disk = models.CharField(max_length=128, verbose_name="硬盘")
     os = models.CharField(max_length=128, verbose_name="操作系统", blank=True)
@@ -26,10 +33,11 @@ class Servers(models.Model):
 
     class Meta:
         verbose_name_plural = "服务器"
+        db_table = 'servers'
 
 
 class Routers(models.Model):
-    id = models.CharField(primary_key=True, max_length=128)
+    #id = models.CharField(primary_key=True, max_length=128)
     routernum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=255, verbose_name="品牌")
     sid = models.CharField(max_length=128, verbose_name="序列号")
@@ -44,11 +52,12 @@ class Routers(models.Model):
     
     class Meta:
         verbose_name_plural = "路由器"
+        db_table = 'routers'
     
     
 
 class Switch(models.Model):
-    id = models.IntegerField(primary_key=True, max_length=128)
+    #id = models.IntegerField(primary_key=True, max_length=128)
     switchnum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=255, verbose_name="品牌")
     sid = models.CharField(max_length=128, verbose_name="序列号")
@@ -63,10 +72,11 @@ class Switch(models.Model):
 
     class Meta:
         verbose_name_plural = "交换机"
+        db_table = 'switch'
 
 
 class Storage(models.Model):
-    id = models.IntegerField(primary_key=True, max_length=128)
+    #id = models.IntegerField(primary_key=True, max_length=128)
     storagenum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=255, verbose_name="品牌")
     sid = models.CharField(max_length=128, verbose_name="序列号")
@@ -81,10 +91,11 @@ class Storage(models.Model):
 
     class Meta:
         verbose_name_plural = "存储"
+        db_table = 'storage'
 
 
 class Firewall(models.Model):
-    id = models.IntegerField(primary_key=True, max_length=128)
+    #id = models.IntegerField(primary_key=True, max_length=128)
     fwnum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=255, verbose_name="品牌")
     sid = models.CharField(max_length=128, verbose_name="序列号")
@@ -99,3 +110,4 @@ class Firewall(models.Model):
     
     class Meta:
         verbose_name_plural = "防火墙"
+        db_table = 'firewall'

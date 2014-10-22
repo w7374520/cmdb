@@ -2,6 +2,7 @@
 
 from django.contrib import admin
 from models import Servers,Routers,Switch,Storage,Firewall
+from django.forms import ModelForm
 
 
 class ServersAdmin(admin.ModelAdmin):
@@ -18,7 +19,14 @@ class StorageAdmin(admin.ModelAdmin):
 
 class FirewallAdmin(admin.ModelAdmin):
     list_display = ("id", "fwnum", "product", "ipaddress", "apptype", "status")
-    
+
+
+#class ServerForm(ModelForm):
+#    class Meta:
+#        model = Servers
+#        
+
+
 admin.site.register(Servers, ServersAdmin)
 admin.site.register(Routers, RoutersAdmin)
 admin.site.register(Switch, SwitchAdmin)
