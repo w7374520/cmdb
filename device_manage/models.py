@@ -2,14 +2,13 @@
 from django.db import models
 
 
-PRODUCTS = {1:'戴尔服务器', 2:'超威服务器', 3:'台式机', 4:'其他'}
-SMODELS = {1:'DELL R610', 2:"DELL R710", 3:"DELL R720", 4:"超威标配"}
+PRODUCTS = {1:u'戴尔服务器', 2:u'超威服务器', 3:u'台式机', 4:u'其他'}
+SMODELS = {1:'DELL R610', 2:"DELL R710", 3:"DELL R720", 4:u"超威标配"}
 
 PRODUCT = [(PS,PS) for PS in PRODUCTS.values()]
 SMODEL = [(PM,PM) for PM in SMODELS.values()]
 
 class Servers(models.Model):
-    #id = models.IntegerField(primary_key=True, max_length=128, )
     servernum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=128, verbose_name="品牌", choices=PRODUCT)
     smodel = models.CharField(max_length=128, verbose_name="型号", choices=SMODEL)
@@ -37,9 +36,8 @@ class Servers(models.Model):
 
 
 class Routers(models.Model):
-    #id = models.CharField(primary_key=True, max_length=128)
     routernum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
-    product = models.CharField(max_length=255, verbose_name="品牌")
+    product = models.CharField(max_length=255, verbose_name="品牌型号")
     sid = models.CharField(max_length=128, verbose_name="序列号")
     rack = models.CharField(max_length=64, verbose_name="机柜", blank=True)
     ipaddress = models.CharField(max_length=128, verbose_name="IP地址", blank=True)
@@ -57,7 +55,6 @@ class Routers(models.Model):
     
 
 class Switch(models.Model):
-    #id = models.IntegerField(primary_key=True, max_length=128)
     switchnum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=255, verbose_name="品牌")
     sid = models.CharField(max_length=128, verbose_name="序列号")
@@ -76,7 +73,6 @@ class Switch(models.Model):
 
 
 class Storage(models.Model):
-    #id = models.IntegerField(primary_key=True, max_length=128)
     storagenum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=255, verbose_name="品牌")
     sid = models.CharField(max_length=128, verbose_name="序列号")
@@ -95,7 +91,6 @@ class Storage(models.Model):
 
 
 class Firewall(models.Model):
-    #id = models.IntegerField(primary_key=True, max_length=128)
     fwnum = models.CharField(max_length=255, unique=True, verbose_name="资产编号")
     product = models.CharField(max_length=255, verbose_name="品牌")
     sid = models.CharField(max_length=128, verbose_name="序列号")

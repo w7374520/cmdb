@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'device_manage',
     'idcroom_manage',
     'operation',
+    #'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (

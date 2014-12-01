@@ -7,6 +7,6 @@ from models import IdcRoom
 
 class IdcroomAdmin(admin.ModelAdmin):
     list_display = ("id", "roomname", "rack", "localzone", "ipnet", "principal")
-    
+    list_display_links = ("id", "roomname", "rack", "localzone", "ipnet", "principal")
 
 admin.site.register(IdcRoom,IdcroomAdmin)
